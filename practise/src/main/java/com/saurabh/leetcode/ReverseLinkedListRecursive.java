@@ -2,15 +2,6 @@ package com.saurabh.leetcode;
 
 public class ReverseLinkedListRecursive {
 	
-	static class Node{
-		int data;
-		Node next;
-		
-		public Node(int data) {
-			this.data = data;
-			this.next = null;
-		}
-	}
 	
 	static class LinkedList{
 		
@@ -36,21 +27,34 @@ public class ReverseLinkedListRecursive {
 		}
 		
 		public static Node reverse(Node head) {
-			if(head == null || head.next == null)
+			
+			/*if(head == null || head.next == null)
 				return head;
 			Node reverse = reverse(head.next);
 			head.next.next = head;
 			head.next = null;
 			return reverse;
+			*/
+			//with using 2 pointers
+			Node prev = null;
+			Node curr = head;
+		        
+		        while(curr != null) {
+		        	Node temp = curr.next;
+		            curr.next = prev;
+		            prev = curr;
+		            curr = temp;
+		        }
+		        return prev;
 		}
 		
 		public static void main(String[] args) {
 			
 			LinkedList llist =  new LinkedList();
-			llist.insertNode(20);
-			llist.insertNode(4);
-            llist.insertNode(15);
-            llist.insertNode(85);
+			llist.insertNode(3);
+			llist.insertNode(2);
+            llist.insertNode(1);
+            //llist.insertNode(85);
             System.out.println("Given linked list:"); 
            printList(llist.head);
            System.out.println();
