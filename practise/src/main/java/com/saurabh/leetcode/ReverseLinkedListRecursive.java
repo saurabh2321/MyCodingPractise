@@ -28,15 +28,15 @@ public class ReverseLinkedListRecursive {
 		
 		public static Node reverse(Node head) {
 			
-			/*if(head == null || head.next == null)
+			if(head == null || head.next == null)
 				return head;
 			Node reverse = reverse(head.next);
 			head.next.next = head;
 			head.next = null;
 			return reverse;
-			*/
+			
 			//with using 2 pointers
-			Node prev = null;
+			/*Node prev = null;
 			Node curr = head;
 		        
 		        while(curr != null) {
@@ -46,6 +46,7 @@ public class ReverseLinkedListRecursive {
 		            curr = temp;
 		        }
 		        return prev;
+		        */
 		}
 		
 		public static void main(String[] args) {
@@ -54,7 +55,6 @@ public class ReverseLinkedListRecursive {
 			llist.insertNode(3);
 			llist.insertNode(2);
             llist.insertNode(1);
-            //llist.insertNode(85);
             System.out.println("Given linked list:"); 
            printList(llist.head);
            System.out.println();

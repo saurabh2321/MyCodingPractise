@@ -19,7 +19,7 @@ public class LongestSubstringNonrepeating {
     }
 
 	public static void main(String[] args) {
-		String s  = "abcabcbb";
+		String s  = "pwwkew";
 		LongestSubstringNonrepeating LongestSubstringNonrepeating = new LongestSubstringNonrepeating();
 		System.out.println(LongestSubstringNonrepeating.lengthOfLongestSubstring(s));
 	}
