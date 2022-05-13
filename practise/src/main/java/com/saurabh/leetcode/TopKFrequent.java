@@ -29,7 +29,8 @@ public class TopKFrequent {
         // O(N log k) < O(N log N) time
         for (int n: count.keySet()) {
           heap.add(n);
-          if (heap.size() > k) heap.poll();    
+          if (heap.size() > k) 
+        	  heap.poll();    
         }
 
         // 3. build an output array

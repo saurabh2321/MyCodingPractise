@@ -34,29 +34,26 @@ public class MedianFinder {
 	public static void main(String[] args) {
 
 		MedianFinder MedianFinder = new MedianFinder();
-		MedianFinder.addNum(41);
+		MedianFinder.addNum(2);
 		System.out.println("minHeap: "+minHeap.toString());
 		System.out.println("maxHeap: "+maxHeap.toString());
 		System.out.println("median: "+MedianFinder.findMedian());
 		System.out.println();
-		MedianFinder.addNum(35);
+		MedianFinder.addNum(3);
 		System.out.println("minHeap: "+minHeap.toString());
 		System.out.println("maxHeap: "+maxHeap.toString());
 		System.out.println("median: "+MedianFinder.findMedian());
 		System.out.println();
-		MedianFinder.addNum(62);
+		MedianFinder.addNum(4);
 		System.out.println("minHeap: "+minHeap.toString());
 		System.out.println("maxHeap: "+maxHeap.toString());
 		System.out.println("median: "+MedianFinder.findMedian());
 		System.out.println();
-		MedianFinder.addNum(5);
-		System.out.println("minHeap: "+minHeap.toString());
-		System.out.println("maxHeap: "+maxHeap.toString());
-		System.out.println("median: "+MedianFinder.findMedian());
-		MedianFinder.addNum(97);
-		System.out.println("minHeap: "+minHeap.toString());
-		System.out.println("maxHeap: "+maxHeap.toString());
-		System.out.println("median: "+MedianFinder.findMedian());
+		/*
+		 * MedianFinder.addNum(5); System.out.println("minHeap: "+minHeap.toString());
+		 * System.out.println("maxHeap: "+maxHeap.toString());
+		 * System.out.println("median: "+MedianFinder.findMedian());
+		 */
 	}
 
 }
