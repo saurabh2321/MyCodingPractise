@@ -9,11 +9,11 @@ public class EvenOddThreadGFG {
 
 		synchronized (this) {
 			while (counter < N) {
-				while (counter % 2 == 0) {
+				if (counter % 2 == 0) {
 
 					try {
 						wait();
-						System.out.println(Thread.currentThread().getName()+" wait odd "+counter);
+						System.out.println(Thread.currentThread().getName()+" wait"+counter+" even");
 					} catch (InterruptedException e) {
 						Thread.currentThread().interrupt();
 					}
@@ -30,11 +30,11 @@ public class EvenOddThreadGFG {
 
 		synchronized (this) {
 			while (counter < N) {
-				while (counter % 2 == 1) {
+				if (counter % 2 == 1) {
 
 					try {
 						wait();
-						System.out.println(Thread.currentThread().getName()+" wait even "+counter);
+						System.out.println(Thread.currentThread().getName()+" wait"+counter+" odd");
 					} catch (InterruptedException e) {
 						Thread.currentThread().interrupt();
 					}
