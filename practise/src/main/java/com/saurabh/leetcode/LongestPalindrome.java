@@ -31,7 +31,7 @@ public class LongestPalindrome {
 		}
 	    
 	    public static void main(String[] args) {
-			String s =  "cabad";
+			String s =  "babad";
 			LongestPalindrome LongestPalindrome = new LongestPalindrome();
 			System.out.println(LongestPalindrome.longestPalindrome(s));
 
