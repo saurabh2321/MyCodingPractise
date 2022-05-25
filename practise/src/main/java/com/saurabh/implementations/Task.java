@@ -1,4 +1,4 @@
-package com.saurabh.leetcode;
+package com.saurabh.implementations;
 
 public class Task implements Runnable{
 	private String name;

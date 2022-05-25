@@ -1,4 +1,4 @@
-package com.saurabh.leetcode;
+package com.saurabh.implementations;
 
 public class Test {
 	

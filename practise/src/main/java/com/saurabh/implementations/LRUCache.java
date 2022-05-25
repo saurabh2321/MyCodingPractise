@@ -1,4 +1,4 @@
-	package com.saurabh.leetcode;
+	package com.saurabh.implementations;
 
 import java.util.ArrayDeque;
 import java.util.LinkedHashMap;
