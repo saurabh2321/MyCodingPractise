@@ -21,9 +21,11 @@ public class BlockingQueue {
 		lock.lock();
 		try {
 			while(queue.size() == capacity) {
+				System.out.println("Buffer full");
 				producer.await();
 			}
 			queue.add(x);
+			System.out.println("added: "+x);
 			consumer.signal();
 		}
 		finally {
@@ -35,10 +37,12 @@ public class BlockingQueue {
 		lock.lock();
 		try {
 			while(queue.size() ==0) {
+				System.out.println("Buffer is empty");
 				consumer.await();
 			}
 			int x = queue.removeFirst();
 			producer.signal();
+			System.out.println("removed: "+x);
 			return x;
 		}
 		finally {
@@ -51,7 +55,7 @@ public class BlockingQueue {
 		BlockingQueue queue = new BlockingQueue(2);
 		queue.add(1);
 		queue.add(2);
-		queue.add(4);
+		//queue.add(4);
 		queue.remove();
 		queue.add(3);
 	}
