@@ -1,10 +1,10 @@
 package com.saurabh.leetcode;
 
 public class TrappingRainWater {
-	
+	/*
 	// Function to return the maximum
 	// water that can be stored
-	/*public static int maxWater(int[] arr, int n)
+	public static int maxWater(int[] arr, int n)
 	{
 	     
 	    // To store the maximum water
@@ -36,7 +36,7 @@ public class TrappingRainWater {
 	    return res;
 	}
 	 */
-	
+
 	 // Method for maximum amount of water in o(n)
     static int maxWater(int arr[], int n)
     {

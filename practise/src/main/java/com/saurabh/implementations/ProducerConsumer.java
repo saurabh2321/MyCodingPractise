@@ -22,22 +22,23 @@ public class ProducerConsumer {
 					wait();
 				System.out.println("Producer produced - " + value);
 				list.add(value++);
-				notify();
+				notifyAll();
 				Thread.sleep(1000);
 			}
 		}
 	}
 
 	public void consume() throws InterruptedException {
+		System.out.println("hey");
 		while(true)	{
 		//for(int i=0; i<5; i++) {
 			synchronized (this) {
 
-				while (list.size() == 0)
+				while (list.size() < 5)
 					wait();
 				int value = list.removeFirst();
 				System.out.println("Consumer consumed - " + value);
-				notify();
+				notifyAll();
 				Thread.sleep(1000);
 			}
 	}
@@ -45,7 +46,7 @@ public class ProducerConsumer {
 
 	public static void main(String[] args) throws InterruptedException {
 		
-		ProducerConsumer pc = new ProducerConsumer(2);
+		ProducerConsumer pc = new ProducerConsumer(10);
 		Thread t1 = new Thread(new Runnable() {
 
 			@Override
