@@ -63,7 +63,7 @@ public class Student {
 			return true;
 		if (obj == null)
 			return false;
-		if (getClass() != obj.getClass())
+		if (this.getClass() != obj.getClass())
 			return false;
 		Student other = (Student) obj;
 		return age == other.age && Objects.equals(email, other.email) && id == other.id

@@ -3,19 +3,18 @@ package com.saurabh.implementations;
 import java.util.LinkedList;
 
 public class ProducerConsumer {
-	
 
 	LinkedList<Integer> list = new LinkedList<>();
 	int capacity;
-	
+
 	public ProducerConsumer(int capacity) {
 		this.capacity = capacity;
 	}
 
 	public void produce() throws InterruptedException {
 		int value = 0;
-		while(true) {
-		//for(int i=0; i<5; i++) {
+		while (true) {
+			// for(int i=0; i<5; i++) {
 			synchronized (this) {
 
 				while (list.size() == capacity)
@@ -29,23 +28,22 @@ public class ProducerConsumer {
 	}
 
 	public void consume() throws InterruptedException {
-		System.out.println("hey");
-		while(true)	{
-		//for(int i=0; i<5; i++) {
+		while (true) {
+			// for(int i=0; i<5; i++) {
 			synchronized (this) {
 
-				while (list.size() < 5)
+				while (list.size() == 0)
 					wait();
 				int value = list.removeFirst();
 				System.out.println("Consumer consumed - " + value);
 				notifyAll();
 				Thread.sleep(1000);
 			}
-	}
+		}
 	}
 
 	public static void main(String[] args) throws InterruptedException {
-		
+
 		ProducerConsumer pc = new ProducerConsumer(10);
 		Thread t1 = new Thread(new Runnable() {
 

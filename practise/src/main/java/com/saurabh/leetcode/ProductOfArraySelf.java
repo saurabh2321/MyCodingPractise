@@ -4,40 +4,32 @@ import java.util.Arrays;
 
 public class ProductOfArraySelf {
 
-		public int[] productExceptSelf(int[] nums) {
-		    int leng = nums.length;
-		    int[] a = new int[leng];
-		    Arrays.fill(a,1);
-		   /* int runningprefix = 1;
-		    for(int i = 0; i < leng; i++){
-		        ret[i] = runningprefix;
-		        runningprefix*= nums[i];
-		    }
-		    System.out.println(Arrays.toString(ret));
-		    int runningsufix = 1;
-		    for(int i = leng -1; i >= 0; i--){
-		        ret[i] *= runningsufix;
-		        runningsufix *= nums[i];
-		    }
-		    System.out.println(Arrays.toString(ret));
-		    return ret;*/
-		    
-		    int product = 1;
-		    for (int i = nums.length - 1; i > 0; i--) {
-		      product = product * nums[i];
-		      a[i - 1] = product;
-		    }
-		    System.out.println(Arrays.toString(a));
-		    product = 1;
-
-		    for (int i = 0; i < nums.length - 1; i++) {
-		      product = product * nums[i];
-		      a[i + 1] = product * a[i + 1];
-		    }
-		    System.out.println(Arrays.toString(a));
-		    return a;
-		 
-		    }
+	 public int[] productExceptSelf(int[] nums) {
+	        int n = nums.length;
+	        // leftProduct[i] is product of numbers to the left of i.
+	        int[] leftProduct = new int[n];
+	        // rightProduct[i] is product of numbers to the right of i.
+	        int[] rightProduct = new int[n];
+	        // productExceptSelf[i] is product of array except self.
+	        int[] productExceptSelf = new int[n];
+	        
+	        //Please note that nums[0] doesn't have elements to its left, and nums[n-1] doesn't have elements to its right. Thus
+	        leftProduct[0] = 1; // Without numbers to its left.
+	        rightProduct[n - 1] = 1; // Without numbers to its right.
+	        
+	        for (int i = 1; i < n; i++) {
+	            leftProduct[i] = leftProduct[i - 1] * nums[i - 1];
+	        }
+	        for (int i = n - 2; i >= 0; i--) {
+	            rightProduct[i] = rightProduct[i + 1] * nums[i + 1];
+	        }
+	        for (int i = 0; i < n; i++) {
+	        	// product of numbers to the left of nums[i] * product of numbers to the right of nums[i]
+	            productExceptSelf[i] = leftProduct[i] * rightProduct[i]; 
+	        }
+	        
+	        return productExceptSelf;
+	    }
 		    
 		
 		public static void main(String[] args) {

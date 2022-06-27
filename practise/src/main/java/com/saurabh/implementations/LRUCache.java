@@ -1,6 +1,7 @@
 	package com.saurabh.implementations;
 
 import java.util.ArrayDeque;
+import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Queue;
@@ -8,7 +9,7 @@ import java.util.Queue;
  public class LRUCache {
 	
 	int capacity;
-	static private Map<Integer, Integer> map = new LinkedHashMap<>();
+	static private Map<Integer, Integer> map = new HashMap<>();
 	private Queue<Integer> q = new ArrayDeque<>();
 	
 	public LRUCache(int capacity) {

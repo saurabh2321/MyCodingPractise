@@ -3,8 +3,7 @@ package com.saurabh.leetcode;
 public class maxProductSubArray {
 	
     public int maxProduct(int[] nums) {
-      //For each index i keep updating the max and min. We are also keeping min because on multiplying with any negative number 
-    	//your min will become max and max will become min .so why not as soon as we encounter negative element, we swap the max and min already.
+
 		/*
 		 * if(nums == null || nums.length ==0) return 0;
 		 * 
@@ -18,6 +17,8 @@ public class maxProductSubArray {
 		 * max_so_far); } return max;
 		 */
     	
+        //For each index i keep updating the max and min. We are also keeping min because on multiplying with any negative number 
+      	//your min will become max and max will become min .so why not as soon as we encounter negative element, we swap the max and min already.
     	        int max = nums[0], min = nums[0], ans = nums[0];
     	        int n = nums.length;
     	        
@@ -37,7 +38,7 @@ public class maxProductSubArray {
     	    }
 	    
 	    public static void main(String[] args) {
-			int arr[] = {2,3,-2,4};
+			int arr[] = {2,3,-2,4,5};
 			maxProductSubArray maxProductSubArray =  new maxProductSubArray();
 			System.out.println(maxProductSubArray.maxProduct(arr));
 	}
