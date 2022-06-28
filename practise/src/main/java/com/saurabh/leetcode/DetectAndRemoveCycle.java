@@ -28,6 +28,8 @@ public class DetectAndRemoveCycle {
 				ptr = ptr.next;
 				len++;
 			}
+			 // If `ptr` meets `curr`, then that means there is a loop, and `curr`
+            // points to the first node of the loop and `ptr` points to the last node
 			if(ptr.next == cur) {
 				ptr.next = null;
 				return;
@@ -52,6 +54,7 @@ public class DetectAndRemoveCycle {
 				list.insertNode(i);
 			}
 			list.printList(list.head);
+			findMiddle(list.head);
 			list.head.next.next.next.next.next = list.head.next;
 			Node slow = identifyCycle(list.head);
 			if(slow != null) {
