@@ -3,7 +3,8 @@ package com.saurabh.leetcode;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.PriorityQueue;
-
+//“Meeting Rooms II” states that you are given an array of meeting time intervals “intervals” where “intervals[i] = [ start[i], end[i] ]”, 
+//return the minimum number of conference rooms required.
 public class MeetingRoomsII {
 
 	public int minMeetingRooms(int[][] intervals) {
@@ -28,7 +29,8 @@ public class MeetingRoomsII {
 		int maxRooms = 0;
 
 		for (int i = 0; i < intervals.length; ++i) {
-			int startTime = intervals[i][0], endTime = intervals[i][1];
+			int startTime = intervals[i][0];
+			int endTime = intervals[i][1];
 
 			// Meetings that end before or at the same time as current meeting starts, need
 			// to 'release' their rooms.
