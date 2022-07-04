@@ -16,14 +16,14 @@ public class Practise {
 		Student student2 = new Student(2, "abhishek", " ", "bihar", 31);
 		Student student3 = new Student(3, "pulkit", " ", "bangalore", 28);
 		Student student4 = new Student(4, "lawrence", " ", "orrisa", 30);
-		//Student student5 = new Student(1, "saurabh", " ", "lucknow", 30);
+		Student student5 = new Student(1, "saurabh", " ", "lucknow", 30);
 		
 		List<Student> students = new ArrayList<>();
 		students.add(student1);
 		students.add(student2);
 		students.add(student3);
 		students.add(student4);
-		//students.add(student5);
+		students.add(student5);
 		
 		//remove duplicates in object
 		
@@ -37,8 +37,10 @@ public class Practise {
 		students.sort(Comparator.comparing((Student s)-> s.getName()).thenComparing((Student s) -> s.getLocation()));
 		System.out.println(students);
 		
-		Map<Integer, Student> map2 = students.stream().collect(Collectors.toMap(Student :: getId, Function.identity()));
-		System.out.println(map2);
+		//Map<Integer, Student> map2 = students.stream().collect(Collectors.toMap(Student :: getId, Function.identity()));
+		//handle duplicate objects
+		Map<Integer, Student> map3 = students.stream().collect(Collectors.toMap(Student :: getId, Function.identity(), (o1,o2) -> o1));
+		System.out.println(map3);
 		
 		List<Integer> list1 = Arrays.asList(1, 2,3, 4);
 		List<Integer> list2 = Arrays.asList(4,5,6,7,8);
