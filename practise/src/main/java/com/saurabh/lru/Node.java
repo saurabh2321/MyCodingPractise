@@ -11,5 +11,4 @@ public class Node {
 		this.key = key;
 		this.value = value;
 	}
-
 }
